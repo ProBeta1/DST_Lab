@@ -1,0 +1,37 @@
+
+
+ADT :
+
+An abstract data type is a model that describes how data is manipulated from the point of view of the user.
+In other words, the user should get a set of functions and behaviors that are identical regardless of how the model is implemented.
+
+There are many open source implementations of STL. However it is difficult to read the STL code because it is meant to be practically usable than readable.
+
+
+
+STACK :  LIFO
+Operations - 
+	push(x)
+	pop()
+	isempty()
+	top()
+
+Most computer architectures implement a stack at the very core of their instruction sets — both push and pop are assembly code instructions. Stack operations are so useful that there is a stack built in to every program running on your PC — the stack is a memory block that gets used to store the state of memory when a function is called, and to restore it when a function returns.
+
+Limits:
+No random access
+
+Some problems....
+
+
+QUEUES : FIFO
+Operations - 
+	enqueue(x)
+	dequeue()
+	front()
+	isempty()
+
+Applc - Ticket counters , File servers , Std Algos ....
+
+
+TRY OUT This question ....  (Spoj - Histogra ) 
