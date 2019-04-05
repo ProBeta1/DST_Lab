@@ -33,4 +33,4 @@ Max_heap_insert(A , key):
 
 eg. { 15, 13 , 9 , 5, 12, 8, 7, 4, 0, 6, 2, 1 }
 
-All the above functions have complexity O (log n)
+All the above functions have complexity O (log n) except Heap_Maximum !
