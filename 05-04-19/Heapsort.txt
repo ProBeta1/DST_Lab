@@ -1,0 +1,151 @@
+Heap : Array object that can be viewed as a nearly complete binary tree.
+
+Array A represents heap :
+-> A.length
+-> A.heap_size
+
+Binary heaps-
+
+
+Eg :  50 45 49 40 38 30 25 20 10 5
+
+Root is A[1]
+
+For any node i:
+Parent(i):
+	return (i/2);
+
+Left(i):
+	return 2*i;
+
+Right(i):
+	return 2*i+1;
+
+
+The HUMBLE HEAP :
+(Only condition which is imposed by heap):
+
+	Max heap Property 
+		A[parent(i)] >= A[i];             (V i except root)
+
+	Min Heap Prop:
+		A[parent(i)]<=A[i];
+
+
+Leaves location in a heap
+
+ Q & A :
+  a) Min. no. of elements in heap of height 'h' ?
+  b) What about Max ?
+  c) Is an sorted array a min-heap ? - Yes
+
+Options:
+  2^(h-1)+1
+  2^(h)
+  2^(h+1)
+  2^(h+1)-1
+  2^(h+1)+1
+
+
+
+Applications :
+
+1) HeapSort Algorithm    
+
+
+2) Priority Queue		
+
+
+1) Heapsort 
+
+-> Height of heap ?   (It's a complete binary tree afterall !) : 
+	Functions to implement heapsort :
+	-> Max_heapify()
+	-> Build Max Heap()
+	-> Heapsort()
+
+
+Max_heapify(A,i):
+	l = LEFT(i)
+	r = RIGHT(i)
+	largest = i
+	if( l<=A.heap_size && A[i]<A[l] )
+		largest = l
+	if( r<= A.heap_size && A[largest]<A[r])
+		largest = r
+	if( i!=largest )
+		swap( A[i], A[largest])
+		Max_heapify(A,largest)
+
+This funct assumes that trees rooted at Left(i) and Right(i) are already max_heaps !
+
+Complexity  : O(log n)
+
+Build_max_heap(A):
+	A.heap_size=A.heap_length
+	for i = A.length/2 to 1:
+		Max_heapify(A,i)
+
+Eg . A[9] = { 5,3,17,10,84,19,6,22,9 } , Build your own max_heap !
+
+
+Complexity : O( n log n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Really ? 
+
+
+
+
+
+
+
+
+We can derive a tighter bound , i.e. O( n )
+
+Observation : 
+-> Max_heapify() varies with the height of node in the tree
+-> An n-element heap has at most ceil(n/(2^(h+1))) nodes of any height 'h' 
+ (Why ?)
+
+
+
+
+The Algorithm :
+
+Heapsort(A)
+	Build_max_heap(A)
+	for i= A.length to 2:
+		swap( A[1] , A[i] )
+		A.heap_size--
+		Max_Heapify(A,1)
+
+Complexity : O( n log n)
+
+Perform on { 5,13,2,25,7,17,20,8,4 };
